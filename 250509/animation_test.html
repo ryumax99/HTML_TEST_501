@@ -66,12 +66,18 @@
         .test1 {
             border: 2px solid blue;
         }
+        
+        .img-hover-ht:hover {
+            transform: scale(1.5);
+        }
     </style>
     <h2>나의 사진첩, transition 테스트 공간</h2>
     <div class="container">
         <!-- 다른 클래스를 여러 개 적용시, 구분자가 공백임 -->
         <div class="img-wrapper test1">
-            <img src="img/cat1.jpg" alt="고양이1">
+            <div class="img-hover-ht">
+                <img src="img/cat1.jpg" alt="고양이1">
+            </div>
         </div>
         <div class="img-wrapper test1">
             <img src="img/cat2.jpg" alt="고양이2">
