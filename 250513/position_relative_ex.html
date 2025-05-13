@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .tooltip-wrapper {
+            position: relative;
+        }
+
+        .tooltip {
+            position: absolute;
+            /* position: fixed;
+            right: 20px;
+            bottom: 20px; */
+            /* top: 100%; */
+            /* position: sticky;
+            top: 0; */
+            left: 0;
+            background: black;
+            color: white;
+            padding: 5px;
+        }
+        /* ✅ fixed 예제 */
+        .tooltip-fixed {
+            /* 옵션2,  브라우저의 창에서 오른쪽 하단에 항상 고정. 스크롤해도 따라옴,
+            예시) 탑 버튼, */
+            /* position: fixed;
+            right: 200px;
+            bottom: 200px; */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: darkgreen;
+            color: white;
+            padding: 8px;
+            z-index: 9999;
+        }
+
+        /* ✅ sticky 예제 */
+        .sticky-header {
+            /* 옵션3, 스크롤을 내리다가 top : 0 위치에 도달하면 고정 상태로 전환됨. 
+            보통, 헤더 , 네비게이션 메뉴에 활용. */
+            position: sticky;
+            top: 0;
+            background: navy;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="tooltip-wrapper">
+        버튼 위에 마우스를 올려보세요
+        <div class="tooltip">툴팁 내용</div>
+    </div>
+    
+    <div class="sticky-header">스크롤 시 고정되는 헤더 (sticky)</div>
+
+    <div class="spacer"></div>
+
+    <div class="tooltip-fixed">항상 화면 하단에 고정된 툴팁 (fixed)</div>
+
+</body>
+
+</html>
