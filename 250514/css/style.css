@@ -2,7 +2,7 @@
 
 
 body {
-    font-family: "Nanum Pen Script", cursive;
+    /* font-family: "Nanum Pen Script", cursive; */
     margin: 40px;
     background: #d3d5da;
     /* height: 100vh; */
@@ -19,7 +19,7 @@ body {
 }
 
 form {
-    background: #fff;
+    background: rgb(91, 141, 148);
     padding: 20px;
     border: 2px solid #ccc;
     width: 400px;
