@@ -105,7 +105,7 @@ nav button {
     outline: 0;
     /* flex에서 레이아웃에서 유연하게 송간 분배를 지정하는 단축 속성, 자동으로 남은 공간 차지 */
     flex: 1;
-    margin-left: 20;
+    margin-left: 20px;
 }
 
 .add-email button {
@@ -168,7 +168,8 @@ nav button {
     margin-bottom: 30px;
 }
 
-#banner button , .membership-contents button {
+#banner button,
+.membership-contents button {
     border: 0;
     outline: 0;
     border-radius: 5px;
@@ -235,7 +236,7 @@ nav button {
     border: 0;
     outline: 0;
     border-radius: 10px;
-    background: linear-gradient(to bottom, rgba(25,32,68,1) 0%, rgba(32,19,34,1)62%);
+    background: linear-gradient(to bottom, rgba(25, 32, 68, 1) 0%, rgba(32, 19, 34, 1)62%);
     padding: 40px;
     height: 300px;
     position: relative;
@@ -268,8 +269,180 @@ nav button {
     }
 }
 
+
 /* FAQ 부분 작업 */
+
+#faq .accordion {
+    width: 100%;
+    max-width: 750px;
+    margin: 60px auto;
+}
+
+.accordion li {
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    /* 기준위치입니다 */
+    position: relative;
+}
+
+/* 가상요소 : html 수정하지 않고, 시가적인 효과 주기위해서 사용. 
+사용하는 방법 요소 뒤에 (::) 콜론 2개를 붙여서 사용함. 
+::after : 해당 요소의 마지막 부분에 콘텐츠를 추가 가능함. 
+주의사항, 반드시 content 속성이 있어야 동작함. 
+
+::before : 요소 앞쪽에 추가함. 
+*/
+.accordion li label::after {
+    content: '\2b';
+    font-size: 40px;
+    position: absolute;
+    right: 20px;
+    transition: 0.5s;
+}
+
+.accordion input[type="radio"] {
+    display: none;
+}
+
+.accordion .content {
+    background: #3b3b3b;
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* input[type="radio"] 체크 하면 */
+/* + 바로 다음 형제 요소에 대해서 선택하는 기능. 
+결론, 아래의 선택자의 선택은 
+ accordion 클래스 하위의 라디오 체크가된 
+ 라벨 옆에, 콘텐츠만 가리킴*/
+/* 선택자	설명
+A + B	A 요소 바로 다음에 오는 B 요소
+A ~ B	A 뒤에 오는 모든 형제 B 요소
+:checked	input, radio, checkbox가 선택된 경우
+[type="radio"]	속성 선택자. type이 radio인 요소 대상
+input:checked + div	input이 체크되었을 때, 바로 뒤의 div를 제어 */
+
+.accordion input[type="radio"]:checked+label+.content {
+    max-height: 600px;
+    padding: 30px 20px;
+}
+
+.accordion input[type="radio"]:checked+label::after {
+    transform: rotate(-135deg);
+}
+
+.newsletter {
+    padding: 20px 10%;
+}
 
 /* footer 부분 작업 */
 
+.footer {
+    padding: 60px 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+}
+
+.footer-content a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.left {
+    flex-basis: 60%;
+}
+
+.center,
+.right {
+    flex-basis: 20%;
+    vertical-align: top;
+}
+
+.col h2 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.col h3 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+
+/* .footer-nav 요소 하위에 li 요소 중에서 
+마지막 요소를 제외한 전체 : 오른쪽 선 생성 */
+.footer-nav li:not(:last-child) {
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+
+.footer-info {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-content p {
+    font-size: 14px;
+    line-height: 0.6;
+    color: rgba(225, 225, 225, 0.7);
+    margin-bottom: 20px;
+}
+
 /* 반응형 footer 부분 작업 */
+
+@media only screen and (max-width: 768px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col {
+        flex-basis: 100%;
+    }
+
+    .col h2 {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .col h3 {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+}
