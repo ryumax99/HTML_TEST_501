@@ -74,7 +74,7 @@ nav button {
     /* 가운데 정렬 하는법 */
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -86,7 +86,7 @@ nav button {
     margin-bottom: 20px;
 }
 
-.header-contents h3 {    
+.header-contents h3 {
     font-weight: 400;
     margin-bottom: 40px;
 }
@@ -123,24 +123,30 @@ nav button {
     .logo {
         font-size: 20px;
     }
+
     nav button {
         padding: 5px 10px;
     }
+
     .lang {
         padding: 4px 8px;
-    }    
+    }
+
     .header-contents {
         position: unset;
         transform: none;
-        padding-top: 150px;        
+        padding-top: 150px;
     }
+
     .header-contents h2 {
         font-size: 48px;
         line-height: 50px;
     }
+
     .header-contents h2 {
         font-size: 20px;
     }
+
     .add-email button {
         font-size: 12px;
         padding: 10px 15px;
@@ -151,18 +157,18 @@ nav button {
 
 .banner-contents {
     border-radius: 6px;
-    background: linear-gradient(to right,#651c3d 0%,#280a2b 60%);
+    background: linear-gradient(to right, #651c3d 0%, #280a2b 60%);
     padding: 40px;
     margin-bottom: 40px;
 }
 
 #banner p {
     font-size: 20px;
-    color: rgba(225,225,225,0.7);
+    color: rgba(225, 225, 225, 0.7);
     margin-bottom: 30px;
 }
 
-#banner button {
+#banner button , .membership-contents button {
     border: 0;
     outline: 0;
     border-radius: 5px;
@@ -190,9 +196,77 @@ nav button {
 
 /* 멤버쉽 부분 작업 */
 
+.membership-contents {
+    border-radius: 6px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    background: linear-gradient(to right, rgba(101, 28, 61, 0.9) 0%,
+            rgba(40, 10, 43, 0.5) 60%),
+        url(/HTML_TEST_501/img/test1.jpg) no-repeat right center;
+    background-size: cover;
+
+}
+
+.membership-contents p {
+    font-size: 20px;
+    color: rgba(225, 225, 225, 0.7);
+    margin-bottom: 30px;
+}
+
+
+
 /* 선택 가이드 부분 작업 */
 
+#choice p {
+    font-size: 22px;
+    color: rgba(225, 225, 225, 0.7);
+    margin-bottom: 30px;
+}
+
+.choice-contents {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.card {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, rgba(25,32,68,1) 0%, rgba(32,19,34,1)62%);
+    padding: 40px;
+    height: 300px;
+    position: relative;
+}
+
+.subject-img {
+    width: 80px;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.subject-img img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+}
+
 /* 반응형 선택 가이드 부분 작업 */
+
+@media only screen and (max-width: 768px) {
+    .card {
+        flex-basis: calc(50% - 15px);
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1220px) {
+    .card {
+        flex-basis: calc(50% - 15px);
+    }
+}
 
 /* FAQ 부분 작업 */
 
